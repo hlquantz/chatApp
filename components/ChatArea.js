@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: 360,
     borderRadius: 25,
     marginTop: 7,
-    marginBottom: 75,
+    marginBottom: 8,
     //alignItems: "flex-end",
   },
 });
