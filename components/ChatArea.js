@@ -1,101 +1,11 @@
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
 import Bubble from "./Bubble";
 
-const DATA = [
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST1",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST2",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST3",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST4",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST5",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST1",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST2",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST3",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST4",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST5",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST1",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST2",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST3",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST4",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content: "TEST5",
-    sent: true,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    sent: false,
-  },
-  {
-    id: Date.toString() + Math.random().toString(),
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    sent: true,
-  },
-];
-
-function ChatArea() {
+function ChatArea({ messages }) {
   return (
     <View style={styles.container}>
       <FlatList
-        data={DATA}
+        data={messages}
         renderItem={({ item }) => (
           <View style={item.sent ? styles.sent : styles.received}>
             <Bubble>{item.content}</Bubble>
