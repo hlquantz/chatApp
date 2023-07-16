@@ -7,8 +7,13 @@ import {
 } from "react-native";
 
 import { AntDesign } from "@expo/vector-icons";
+import { useContext, useState } from "react";
+import ConvoConextProvider from "../context/ConvoContext";
 
 function Input() {
+  const ConvoCtx = useContext(ConvoConextProvider);
+  const [currentMessage, setCurrentMessage] = useState("");
+
   return (
     <KeyboardAvoidingView behavior="height">
       <View style={styles.container}>
@@ -20,8 +25,9 @@ function Input() {
           numberOfLines={4}
           minHeight={40}
           maxHeight={160}
+          onChangeText={setCurrentMessage}
         />
-        <Pressable>
+        <Pressable onPress={ConvoCtx.addMessage(currentMessage)}>
           <AntDesign
             name="doubleright"
             size={24}

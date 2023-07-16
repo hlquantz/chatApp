@@ -8,7 +8,7 @@ function ChatArea({ messages }) {
         data={messages}
         renderItem={({ item }) => (
           <View style={item.sent ? styles.sent : styles.received}>
-            <Bubble>{item.content}</Bubble>
+            <Bubble>test</Bubble>
           </View>
         )}
         keyExtractor={(item) => item.id}

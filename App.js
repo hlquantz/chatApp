@@ -1,22 +1,37 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Bubble from "./components/Bubble";
+import { useState } from "react";
+
+import ChatArea from "./components/ChatArea";
+import Input from "./components/Input";
+import ConvoConextProvider from "./context/convoContext";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Bubble>LONGER TEST!!!!!</Bubble>
-    </View>
+    <ConvoConextProvider>
+      <View style={styles.container}>
+        <StatusBar style="light" />
+        <Text style={styles.name}>NAME HERE</Text>
+        <ChatArea />
+        <Input />
+      </View>
+    </ConvoConextProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
     alignItems: "center",
     justifyContent: "center",
+    paddingHorizontal: 15,
+    paddingTop: 30,
+    paddingBottom: 10,
+  },
+  name: {
+    color: "#FFF",
+    fontSize: 20,
+    paddingTop: 10,
   },
 });
