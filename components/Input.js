@@ -8,10 +8,10 @@ import {
 
 import { AntDesign } from "@expo/vector-icons";
 import { useContext, useState } from "react";
-import ConvoConextProvider from "../context/ConvoContext";
+import ConvoContextProvider from "../context/ConvoContext";
 
 function Input() {
-  const ConvoCtx = useContext(ConvoConextProvider);
+  const ConvoCtx = useContext(ConvoContextProvider);
   const [currentMessage, setCurrentMessage] = useState("");
 
   return (
@@ -27,7 +27,14 @@ function Input() {
           maxHeight={160}
           onChangeText={setCurrentMessage}
         />
-        <Pressable onPress={ConvoCtx.addMessage(currentMessage)}>
+        <Pressable
+          onPress={
+            /*ConvoCtx.addMessage(currentMessage)*/ () => {
+              ConvoCtx.addMessage(currentMessage);
+              console.log(currentMessage);
+            }
+          }
+        >
           <View style={styles.inputButton}>
             <AntDesign
               name="doubleright"

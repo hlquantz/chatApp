@@ -4,18 +4,18 @@ import { useState } from "react";
 
 import ChatArea from "./components/ChatArea";
 import Input from "./components/Input";
-import ConvoConextProvider from "./context/ConvoContext";
+import ConvoContextProvider from "./context/ConvoContext";
 
 export default function App() {
   return (
-    <ConvoConextProvider>
+    <ConvoContextProvider>
       <View style={styles.container}>
         <StatusBar style="light" />
         <Text style={styles.name}>NAME HERE</Text>
         <ChatArea />
         <Input />
       </View>
-    </ConvoConextProvider>
+    </ConvoContextProvider>
   );
 }
 

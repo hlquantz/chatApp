@@ -1,5 +1,5 @@
 //TODO: Setup context to remember name of user and bot that are talking
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 
 export const messages = createContext([
   {
@@ -9,7 +9,7 @@ export const messages = createContext([
   },
 ]);
 
-function ConvoConextProvider({ children }) {
+function ConvoContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, messages);
 
   function reducer(state, action) {
@@ -46,4 +46,4 @@ function ConvoConextProvider({ children }) {
   return <messages.Provider value={value}>{children}</messages.Provider>;
 }
 
-export default ConvoConextProvider;
+export default ConvoContextProvider;

@@ -1,4 +1,4 @@
-import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import Bubble from "./Bubble";
 
 function ChatArea({ messages }) {
