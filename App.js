@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import ChatArea from "./components/ChatArea";
 import Input from "./components/Input";
-import ConvoConextProvider from "./context/convoContext";
+import ConvoConextProvider from "./context/ConvoContext";
 
 export default function App() {
   return (

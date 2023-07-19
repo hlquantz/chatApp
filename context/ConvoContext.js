@@ -4,7 +4,7 @@ import { createContext, useReducer, useState } from "react";
 export const messages = createContext([
   {
     id: Date.toString() + Math.random.toString(),
-    //content: "TEST",
+    content: "TEST",
     sent: false,
   },
 ]);
@@ -17,7 +17,7 @@ function ConvoConextProvider({ children }) {
       case "ADD_MESSAGE":
         const newMessage = {
           id: Date.toString() + Math.random.toString(),
-          //   content: action.newMessage,
+          content: action.newMessage,
           sent: action.isSent,
         };
         console.log(newMessage);

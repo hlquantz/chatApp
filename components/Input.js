@@ -28,12 +28,14 @@ function Input() {
           onChangeText={setCurrentMessage}
         />
         <Pressable onPress={ConvoCtx.addMessage(currentMessage)}>
-          <AntDesign
-            name="doubleright"
-            size={24}
-            color="white"
-            style={styles.icon}
-          />
+          <View style={styles.inputButton}>
+            <AntDesign
+              name="doubleright"
+              size={24}
+              color="white"
+              style={styles.icon}
+            />
+          </View>
         </Pressable>
       </View>
     </KeyboardAvoidingView>
@@ -56,12 +58,20 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     color: "#fff",
     paddingHorizontal: 10,
-    paddingVertical: 3,
+    paddingVertical: 11,
     minHeight: 40,
     maxHeight: 160,
     textAlignVertical: "top",
   },
   icon: {
     marginHorizontal: 10,
+  },
+  inputButton: {
+    backgroundColor: "#333",
+    borderRadius: 50,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 7,
   },
 });
