@@ -8,14 +8,16 @@ import ConvoContextProvider from "./context/ConvoContext";
 
 export default function App() {
   return (
-    <ConvoContextProvider>
-      <View style={styles.container}>
-        <StatusBar style="light" />
-        <Text style={styles.name}>NAME HERE</Text>
-        <ChatArea />
-        <Input />
-      </View>
-    </ConvoContextProvider>
+    <>
+      <StatusBar style="light" />
+      <ConvoContextProvider>
+        <View style={styles.container}>
+          <Text style={styles.name}>NAME HERE</Text>
+          <ChatArea />
+          <Input />
+        </View>
+      </ConvoContextProvider>
+    </>
   );
 }
 

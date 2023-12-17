@@ -30,8 +30,9 @@ function Input() {
         <Pressable
           onPress={
             /*ConvoCtx.addMessage(currentMessage)*/ () => {
-              ConvoCtx.addMessage(currentMessage);
               console.log(currentMessage);
+              // ConvoCtx.addMessage(currentMessage);
+              
             }
           }
         >

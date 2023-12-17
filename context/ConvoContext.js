@@ -1,13 +1,7 @@
 //TODO: Setup context to remember name of user and bot that are talking
 import { createContext, useReducer } from "react";
 
-export const messages = createContext([
-  {
-    id: Date.toString() + Math.random.toString(),
-    content: "TEST",
-    sent: false,
-  },
-]);
+export const messages = createContext({ messages: [] });
 
 function ConvoContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, messages);
@@ -16,14 +10,14 @@ function ConvoContextProvider({ children }) {
     switch (action.type) {
       case "ADD_MESSAGE":
         const newMessage = {
-          id: Date.toString() + Math.random.toString(),
+          id: Date().toString() + Math.random().toString(),
           content: action.newMessage,
           sent: action.isSent,
         };
         console.log(newMessage);
         return {
           ...state,
-          newMessage,
+          messages: [...state.messages, newMessage],
         };
 
       default:
@@ -32,6 +26,7 @@ function ConvoContextProvider({ children }) {
   }
 
   function addMessage(e) {
+    console.log(e);
     dispatch({
       type: "ADD_MESSAGE",
       newMessage: e,
@@ -39,7 +34,8 @@ function ConvoContextProvider({ children }) {
   }
 
   const value = {
-    messages: messages,
+    state: state,
+    dispatch: dispatch,
     addMessage: addMessage,
   };
 
